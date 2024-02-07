@@ -1,23 +1,18 @@
 ﻿using OnionArcProject.Domain.Models;
 using OnionArcProject.Domain.ModelsDTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnionArcProject.Interfaces.RepositoryInterfaces
 {
-    internal interface IVenderRepository
+    public interface IVenderRepository
     {
         //Search by id
-        Vender GetById(Guid id);
+        Vender? GetById(Guid id);
         //Get all Venders
         ICollection<Vender> GetAll();
         //Create Vender
-        Guid CreateVender(VenderModelDTO venderDTO);
+        Guid CreateVender(Vender vender);
         //Update Vender
-        bool UpdateVEnder(VenderModelDTO venderDTO);
+        bool UpdateVender(Vender vender);
         //Delete Vender
         bool DeleteVender(Guid id);
     }

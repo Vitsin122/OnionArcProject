@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Domain\OnionArcProject.Domain.csproj" />
+    <ProjectReference Include="..\Services\OnionArcProject.Infrastruct.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastruct.Data\OnionArcProject.Infrastruct.Data.csproj" />
+    <ProjectReference Include="..\Interfaces\OnionArcProject.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

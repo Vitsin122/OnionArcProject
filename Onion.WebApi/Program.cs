@@ -1,3 +1,5 @@
+using Onion.WebApi.LibConfigure;
+using OnionArcProject.Infrastruct.Data.DBContext;
 
 namespace Onion.WebApi
 {
@@ -11,6 +13,8 @@ namespace Onion.WebApi
            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MapperProfile>());
+            builder.Services.AddDbContext<SimpleTestDbContext>();
 
             var app = builder.Build();
 

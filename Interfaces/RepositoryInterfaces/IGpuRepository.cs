@@ -1,18 +1,17 @@
 ﻿using OnionArcProject.Domain.Models;
-using OnionArcProject.Domain.ModelsDTO;
 
 namespace OnionArcProject.Interfaces.RepositoryInterfaces
 {
-    internal interface IGpuRepository
+    public interface IGpuRepository
     {
         //Search by id
-        Gpu GetById(Guid id);
+        Gpu? GetById(Guid id);
         //Get all Gpus
         ICollection<Gpu> GetAll();
         //Create Gpu
-        Guid CreateGPU(GpuModelDTO gpuDTO);
+        Guid CreateGPU(Gpu gpu);
         //Update Gpu
-        bool UpdateGPU(GpuModelDTO gpuDTO);
+        bool UpdateGPU(Gpu gpu);
         //Delete Gpu
         bool DeleteGPU(Guid id);
     }

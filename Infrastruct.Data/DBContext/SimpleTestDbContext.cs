@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnionArcProject.Domain.Models;
 
-namespace Infrastruct.Data;
+namespace OnionArcProject.Infrastruct.Data.DBContext;
 public partial class SimpleTestDbContext : DbContext
 {
     public SimpleTestDbContext()
@@ -25,7 +25,7 @@ public partial class SimpleTestDbContext : DbContext
         modelBuilder.Entity<Gpu>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("gpus_pkey");
-             
+
             entity.ToTable("gpus");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
