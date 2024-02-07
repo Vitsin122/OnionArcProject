@@ -1,6 +1,6 @@
-﻿namespace OnionArcProject.Domain;
+﻿namespace OnionArcProject.Domain.Models;
 
-public partial class Gpu
+public class Gpu
 {
     public Guid Id { get; set; }
 

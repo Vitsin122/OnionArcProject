@@ -1,6 +1,6 @@
-﻿namespace OnionArcProject.Domain;
+﻿namespace OnionArcProject.Domain.Models;
 
-public partial class Vender
+public class Vender
 {
     public Guid Id { get; set; }
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OnionArcProject.Domain;
+using OnionArcProject.Domain.Models;
 
 namespace Infrastruct.Data;
 public partial class SimpleTestDbContext : DbContext
