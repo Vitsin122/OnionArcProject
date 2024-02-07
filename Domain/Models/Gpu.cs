@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Onion.WebApi;
+﻿namespace OnionArcProject.Domain;
 
 public partial class Gpu
 {
