@@ -1,5 +1,9 @@
 using Onion.WebApi.LibConfigure;
 using OnionArcProject.Infrastruct.Data.DBContext;
+using OnionArcProject.Infrastruct.Data.Repositories;
+using OnionArcProject.Infrastruct.Services;
+using OnionArcProject.Interfaces.RepositoryInterfaces;
+using OnionArcProject.Interfaces.ServiceInterfaces;
 
 namespace Onion.WebApi
 {
@@ -15,10 +19,12 @@ namespace Onion.WebApi
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MapperProfile>());
             builder.Services.AddDbContext<SimpleTestDbContext>();
+            builder.Services.AddTransient<IServiceZatichka1, ServiceZatichka1>();
+            builder.Services.AddTransient<IVenderRepository, VenderRepository>();
+            builder.Services.AddTransient<IGpuRepository, GpuRepository>();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

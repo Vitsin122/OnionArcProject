@@ -9,7 +9,9 @@ namespace Onion.WebApi.LibConfigure
         public MapperProfile()
         {
             CreateMap<Gpu, GpuModelDTO>();
+            CreateMap<GpuModelDTO, Gpu>();
             CreateMap<Vender, VenderModelDTO>();
+            CreateMap<VenderModelDTO, Vender>();
         }
     }
 }
