@@ -14,10 +14,12 @@ namespace Onion.WebApi.Controllers
     {
         private IServiceZatichka1 _serviceZatichka;
         private IMapper _mapper;
-        public ZatichkaController(IMapper mapper, IServiceZatichka1 serviceZatichka1)
+        private ILogger<ZatichkaController> _logger;
+        public ZatichkaController(IMapper mapper, IServiceZatichka1 serviceZatichka1, ILogger<ZatichkaController> _logger)
         {
             _mapper = mapper;
             _serviceZatichka = serviceZatichka1;
+            this._logger = _logger;
         }
 
         [HttpPost]
@@ -29,6 +31,7 @@ namespace Onion.WebApi.Controllers
                 var vender = _mapper.Map<Vender>(venderDTO);
 
                 _serviceZatichka.CreateVender(vender);
+                
 
                 return Ok(vender);
             }

@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Interfaces\OnionArcProject.Interfaces.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DBContext\" />
+  </ItemGroup>
+
 </Project>

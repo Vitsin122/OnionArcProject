@@ -19,9 +19,11 @@ namespace Onion.WebApi
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MapperProfile>());
             builder.Services.AddDbContext<SimpleTestDbContext>();
-            builder.Services.AddTransient<IServiceZatichka1, ServiceZatichka1>();
-            builder.Services.AddTransient<IVenderRepository, VenderRepository>();
-            builder.Services.AddTransient<IGpuRepository, GpuRepository>();
+            builder.Services.AddSingleton<IServiceZatichka1, ServiceZatichka1>();
+            builder.Services.AddSingleton<IVenderRepository, VenderRepository>();
+            builder.Services.AddSingleton<IGpuRepository, GpuRepository>();
+            builder.Services.AddLogging();
+            builder.Services.AddSession();
 
             var app = builder.Build();
 
@@ -33,8 +35,8 @@ namespace Onion.WebApi
 
             app.UseHttpsRedirection();
 
+            app.UseSession();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

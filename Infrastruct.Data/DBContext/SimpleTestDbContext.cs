@@ -28,7 +28,7 @@ public partial class SimpleTestDbContext : DbContext
 
             entity.ToTable("gpus");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
             entity.HasOne(d => d.Vender).WithMany(p => p.Gpus)
                 .HasForeignKey(d => d.VenderId)
@@ -42,8 +42,8 @@ public partial class SimpleTestDbContext : DbContext
 
             entity.ToTable("venders");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.MarketShare).HasColumnName("Market share");
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.MarketShare).HasColumnName("MarketShare");
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
